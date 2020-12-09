@@ -144,4 +144,3 @@ alias dotfiles='/usr/bin/git --git-dir=/home/bj/.dotfiles --work-tree=/home/bj'
 # Alacritty
 TERMINAL=alacritty
 alias vim='nvim'
-alias vim='nvim'
