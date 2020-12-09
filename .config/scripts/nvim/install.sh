@@ -7,7 +7,7 @@ mkdir -p ~/.config/nvim
 # Install nvim (and its dependencies: pip3, git), Python 3 and ctags (for tagbar)
 echo '[*] App installing Neovim and its dependencies (Python 3 and git), and dependencies for tagbar (universal-ctags) ...'
 sudo pacman -Syu
-sudo pacman -S --neede neovim python3 python-pip git curl universal-ctags 
+sudo pacman -S --needed neovim python3 python-pip git curl universal-ctags 
 
 # Install virtualenv to containerize dependencies
 echo '[*] Pip installing venv to containerize Neovim dependencies (instead of installing them onto your system) ...'
