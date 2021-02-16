@@ -53,7 +53,9 @@ matching: "fuzzy";
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
 /* theme: "/usr/share/rofi/themes/Arc-Dark.rasi"; */
-theme: "~/.config/rofi/themes/bj-center.rasi";
+/* theme: "~/.config/rofi/themes/bj-center.rasi"; */
+/* theme: "~/.config/rofi/themes/bj-dmenu.rasi"; */
+theme: "~/.config/rofi/themes/dracula.rasi";
 /*	color-normal: "#510231, #FEE8DA, #510231, #FF974E, #510231";
   	color-urgent: "#510231, #FA6E43, #510231, #FA6E43, #FEE8DA";
   	color-active: "#510231, #FEE8DA, #510231, #FF974E, #510231";

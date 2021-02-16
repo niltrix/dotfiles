@@ -64,4 +64,6 @@ get_session(){
 }
 
 vmware-user &
+vmware-user-suid-wrapper &
+xset r rate 200 70 &
 exec $(get_session "$1")

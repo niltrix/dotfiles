@@ -12,9 +12,12 @@
 # if status --is-interactive
 #   ...
 # end
+fenv source ~/.profile
+
+set fish_greeting
 set fish_plugins autojump vi-mode
 
-# VI MODE
+ # VI MODE
 function fish_mode_prompt
   switch $fish_bind_mode
     case default
@@ -44,4 +47,8 @@ end
 
 # dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+# keyboard repeat rate
+xset r rate 200 70
+
 
