@@ -87,3 +87,6 @@ end
 
 # dotfiles for managing configuration
 alias dotfiles='git --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
+
+# zoxide
+zoxide init fish | source
