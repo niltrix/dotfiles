@@ -34,11 +34,6 @@ else
     abbr -a lll 'ls -la'
 end
 
-# autojump
-# if command -v autojump >/dev/null
-#     source /opt/homebrew/share/autojump/autojump.fish
-# end
-#
 # # tmuxinator
 # if command -v tmuxinator >/dev/null
 #     abbr -a tx tmuxinator
@@ -62,7 +57,7 @@ end
 # 	eval direnv hook fish
 # end &> /dev/null
 
-# Setting golang & GOENV
+# Setting golang & GOENVl
 # export GOENV_ROOT="$HOME/.goenv"
 # export PATH="$GOENV_ROOT/bin:$PATH"
 # eval "$(goenv init -)"
@@ -73,17 +68,18 @@ end
 # fish_add_path $HOME/.cargo/bin
 # source "$HOME/.cargo/env.fish"
 
-# Setting fzf
-# fzf --fish | source
-
 # aws-cli docker
 # alias aws='docker run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 # aws-cli with aws_completer
 # if command -v aws_completer >/dev/null
 #     complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 # end
+
+# Minikube completion
+minikube completion fish | source
+
 # kubectl autocompleter
-# kubectl completion fish | source
+kubectl completion fish | source
 
 # dotfiles for managing configuration
 alias dotfiles='git --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
