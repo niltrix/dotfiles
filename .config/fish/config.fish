@@ -76,13 +76,19 @@ end
 # end
 
 # Minikube completion
-minikube completion fish | source
+if command -v minikube >/dev/null
+    minikube completion fish | source
+end
 
 # kubectl autocompleter
-kubectl completion fish | source
-
-# dotfiles for managing configuration
-alias dotfiles='git --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
+if command -v kubectl >/dev/null
+    kubectl completion fish | source
+end
 
 # zoxide
-zoxide init fish | source
+if command -v zoxide >/dev/null
+    zoxide init fish | source
+end
+# dotfiles for managing configuration
+alias dotfiles='git --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
+alias dotfiles_lazygit='lazygit --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
