@@ -11,8 +11,8 @@ export EDITOR=nvim
 
 # omf theme config
 set -g theme_color_scheme dracula
-# set -g theme_newline_cursor yes
-# set -g theme_newline_prompt '$ '
+set -g theme_newline_cursor yes
+set -g theme_newline_prompt '$ '
 set -g theme_nerd_fonts yes
 
 # Fish git prompt
@@ -34,6 +34,7 @@ else
     abbr -a ll 'ls -l'
     abbr -a lll 'ls -la'
 end
+
 
 # # tmuxinator
 # if command -v tmuxinator >/dev/null
@@ -84,12 +85,20 @@ end
 # kubectl autocompleter
 if command -v kubectl >/dev/null
     kubectl completion fish | source
+    alias kc="kubectl"
 end
 
 # zoxide
 if command -v zoxide >/dev/null
     zoxide init fish | source
 end
+
 # dotfiles for managing configuration
 alias dotfiles='git --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
 alias dotfiles_lazygit='lazygit --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
+
+# <C-f> forward word in selection
+if functions --query _natual_selection
+    unbind \cF
+    bind \cF '_natural_selection forward-word'
+end
