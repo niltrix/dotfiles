@@ -59,16 +59,16 @@ end
 # 	eval direnv hook fish
 # end &> /dev/null
 
-# Setting golang & GOENVl
-# export GOENV_ROOT="$HOME/.goenv"
-# export PATH="$GOENV_ROOT/bin:$PATH"
-# eval "$(goenv init -)"
-# export GOROOT="/usr/local/go"
-# export PATH="$GOROOT/bin:$PATH"
+# Setting golang & GOENV
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export GOROOT="/usr/local/go"
+export PATH="$GOROOT/bin:$PATH"
 
 # Rust env
-# fish_add_path $HOME/.cargo/bin
-# source "$HOME/.cargo/env.fish"
+fish_add_path $HOME/.cargo/bin
+source "$HOME/.cargo/env.fish"
 
 # aws-cli docker
 # alias aws='docker run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
@@ -97,8 +97,8 @@ end
 alias dotfiles='git --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
 alias dotfiles_lazygit='lazygit --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
 
-# <C-f> forward word in selection
-if functions --query _natual_selection
-    unbind \cF
-    bind \cF '_natural_selection forward-word'
-end
+## <C-f> forward word in selection
+#if functions --query _natual_selection
+#    unbind \cF
+#    bind \cF '_natural_selection forward-word'
+#end
