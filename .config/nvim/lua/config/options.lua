@@ -26,16 +26,36 @@ else
 end
 -- vim.g.python.pythonPath = vim.g.python_host_prog
 
--- Enable pbcopy in tmux in MacOS
-vim.g.clipboard = {
-  name = 'macos+tmux',
-  copy = {
-    ['+'] = { 'pbcopy' },
-    ['*'] = { 'tmux', 'load-buffer', '-' },
-  },
-  paste = {
-    ['+'] = { 'pbpaste' },
-    ['*'] = { 'tmux', 'save-buffer', '-' },
-  },
-  cache_enabled = 0,
-}
+-- vim.g.clipboard = {
+--   name = "macos+tmux",
+--   copy = {
+--     ["+"] = { "pbcopy" },
+--     ["*"] = { "tmux", "load-buffer", "-" },
+--   },
+--   paste = {
+--     ["+"] = { "pbpaste" },
+--     ["*"] = { "tmux", "save-buffer", "-" },
+--   },
+--   cache_enabled = 0,
+-- }
+-- vim.o.clipboard = "unnamedplus"
+--
+-- local function paste()
+--   return {
+--     vim.fn.split(vim.fn.getreg(""), "\n"),
+--     vim.fn.getregtype(""),
+--   }
+-- end
+--
+vim.g.clipboard = "unnamedplus"
+-- vim.g.clipboard = {
+--   name = "OSC 52",
+--   copy = {
+--     ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+--     -- ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+--   },
+--   paste = {
+--     ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+--     -- ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+--   },
+-- }

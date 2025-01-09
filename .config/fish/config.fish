@@ -35,6 +35,19 @@ else
     abbr -a lll 'ls -la'
 end
 
+# Tmux
+# Attaches tmux to a session (example: ta portal)
+alias ta='tmux attach -t'
+# Creates a new session
+alias tn='tmux new-session -s '
+# Kill session
+alias tk='tmux kill-session -t '
+# Lists all ongoing sessions
+alias tl='tmux list-sessions'
+# Detach from session
+alias td='tmux detach'
+# Tmux Clear pane
+alias tc='clear; tmux clear-history; clear'
 
 # # tmuxinator
 # if command -v tmuxinator >/dev/null
@@ -47,6 +60,11 @@ end
 # if test -f /opt/homebrew/bin/conda
 # eval /opt/homebrew/bin/conda "shell.fish" hook $argv | source
 # end
+
+if test -f ~/miniconda3/_conda
+    fish_add_path ~/miniconda3/condabin/
+    eval ~/miniconda3/condabin/conda "shell.fish" hook $argv | source
+end
 
 # setting pydev
 # export PYENV_ROOT="$HOME/.pyenv"
@@ -73,9 +91,9 @@ source "$HOME/.cargo/env.fish"
 # aws-cli docker
 # alias aws='docker run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 # aws-cli with aws_completer
-# if command -v aws_completer >/dev/null
-#     complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
-# end
+if command -v aws_completer >/dev/null
+    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+end
 
 # Minikube completion
 if command -v minikube >/dev/null
@@ -96,9 +114,3 @@ end
 # dotfiles for managing configuration
 alias dotfiles='git --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
 alias dotfiles_lazygit='lazygit --git-dir=/home/bj/.config/.dotfiles --work-tree=/home/bj'
-
-## <C-f> forward word in selection
-#if functions --query _natual_selection
-#    unbind \cF
-#    bind \cF '_natural_selection forward-word'
-#end
