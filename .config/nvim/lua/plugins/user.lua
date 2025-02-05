@@ -63,7 +63,7 @@ return {
         },
       }
       return opts
-    end
+    end,
   },
   -- End of lualline theme
 
