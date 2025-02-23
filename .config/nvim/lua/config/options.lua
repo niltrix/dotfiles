@@ -38,7 +38,8 @@ end
 --   },
 --   cache_enabled = 0,
 -- }
--- vim.o.clipboard = "unnamedplus"
+
+vim.o.clipboard = "unnamedplus"
 --
 -- local function paste()
 --   return {
@@ -47,15 +48,16 @@ end
 --   }
 -- end
 --
-vim.g.clipboard = "unnamedplus"
 -- vim.g.clipboard = {
 --   name = "OSC 52",
 --   copy = {
 --     ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
---     -- ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+--     ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
 --   },
 --   paste = {
---     ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+--     -- ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
 --     -- ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+--     ["+"] = function() end,
+--     ["*"] = function() end,
 --   },
 -- }

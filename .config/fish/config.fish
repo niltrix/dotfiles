@@ -1,6 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     fish_user_key_bindings
+    fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs --processes=\cp
 end
 
 fish_add_path ~/.local/bin
@@ -91,8 +92,9 @@ source "$HOME/.cargo/env.fish"
 # aws-cli docker
 # alias aws='docker run --rm -ti -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 # aws-cli with aws_completer
-if command -v aws_completer >/dev/null
-    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+abbr -a aws_completer /snap/aws-cli/current/bin/aws_completer
+if command -v /snap/aws-cli/current/bin/aws_completer >/dev/null
+    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); /snap/aws-cli/current/bin/aws_completer | sed \'s/ $//\'; end)'
 end
 
 # Minikube completion
